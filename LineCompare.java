@@ -23,8 +23,31 @@ public class LineCompare
       System.out.println("Enter y2 value: ");
       int y2 = d.nextInt();
 
-		double len = Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
-		System.out.println(len); 		
-		
+		Scanner e = new Scanner(System.in);
+      System.out.println("Enter p1 value: ");
+      int p1 = e.nextInt();
+
+      Scanner f = new Scanner(System.in);
+      System.out.println("Enter q1 value: ");
+      int q1 = f.nextInt();
+
+      Scanner g = new Scanner(System.in);
+      System.out.println("Enter p2 value: ");
+      int p2 = g.nextInt();
+
+      Scanner h = new Scanner(System.in);
+      System.out.println("Enter q2 value: ");
+      int q2 = h.nextInt();
+
+		double lenLine1 = Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
+		System.out.println(lenLine1);
+
+		double lenLine2 = Math.sqrt(Math.pow((p2 - p1),2) + Math.pow((q2 - q1),2));
+      System.out.println(lenLine2); 		
+
+
+		if(lenLine1 == lenLine2){
+			System.out.println("Both lines are equal");
+		}		
 	}
 }
