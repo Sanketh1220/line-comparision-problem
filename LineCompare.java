@@ -1,3 +1,5 @@
+import java.io.*;
+import java.math.*;
 import java.util.Scanner;
 import java.lang.Math;
 
@@ -40,14 +42,24 @@ public class LineCompare
       int q2 = h.nextInt();
 
 		double lenLine1 = Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
-		System.out.println(lenLine1);
+		System.out.println("Length of line 1: " + lenLine1);
 
 		double lenLine2 = Math.sqrt(Math.pow((p2 - p1),2) + Math.pow((q2 - q1),2));
-      System.out.println(lenLine2); 		
+      System.out.println("Length of line 2: " + lenLine2); 		
 
+		BigDecimal First, Second;
+	
+		First = new BigDecimal (lenLine1);
+		Second = new BigDecimal (lenLine2);
+		int result = First.compareTo(Second);
 
-		if(lenLine1 == lenLine2){
-			System.out.println("Both lines are equal");
-		}		
+		if(result > 0) {
+         System.out.println("Line1 is greater than Line2");
+      } else if(result < 0) {
+         System.out.println("Line1 is less than Line2");
+      } else {
+         System.out.println("Line1 is equal to Line2");
+      }	
+		
 	}
 }
