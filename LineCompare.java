@@ -47,10 +47,10 @@ public class LineCompare
 		double lenLine2 = Math.sqrt(Math.pow((p2 - p1),2) + Math.pow((q2 - q1),2));
       System.out.println("Length of line 2: " + lenLine2); 		
 
-		BigDecimal First, Second;
+		Double First, Second;
 	
-		First = new BigDecimal (lenLine1);
-		Second = new BigDecimal (lenLine2);
+		First = new Double (lenLine1);
+		Second = new Double (lenLine2);
 		int result = First.compareTo(Second);
 
 		if(result > 0) {
