@@ -5,60 +5,55 @@ import java.lang.Math;
 
 public class LineCompare
 {
+	// taking user inputs using constructors
+	static int UserInput() {
+		Scanner a = new Scanner(System.in);
+      System.out.println("Enter points of line: ");
+      return a.nextInt();
+	}
+	
+	// calculating length of line by creating constructors
+	static double LenCal (int a, int b, int c, int d) {
+		double lenLine = Math.sqrt(Math.pow((c - a),2) + Math.pow((d - b),2));
+      return lenLine;	
+	}
+
 	public static void main(String args[])
 	{	
 		System.out.println("This is line comparision problem");
+		
+		// inputs are given to each seperate variables
+		int x1 = UserInput();
+		int y1 = UserInput();
+		int x2 = UserInput();		
+		int y2 = UserInput();
+		int p1 = UserInput();
+		int q1 = UserInput();
+		int p2 = UserInput();
+		int q2 = UserInput();		
 
-		Scanner a = new Scanner(System.in);
-		System.out.println("Enter x1 value: ");
-		int x1 = a.nextInt();
+		// calling constructor
+		double lineLen1 = LenCal(x1, y1, x2, y2);
 
-		Scanner b = new Scanner(System.in);
-      System.out.println("Enter y1 value: ");
-      int y1 = b.nextInt();
-
-		Scanner c = new Scanner(System.in);
-      System.out.println("Enter x2 value: ");
-      int x2 = c.nextInt();
-
-		Scanner d = new Scanner(System.in);
-      System.out.println("Enter y2 value: ");
-      int y2 = d.nextInt();
-
-		Scanner e = new Scanner(System.in);
-      System.out.println("Enter p1 value: ");
-      int p1 = e.nextInt();
-
-      Scanner f = new Scanner(System.in);
-      System.out.println("Enter q1 value: ");
-      int q1 = f.nextInt();
-
-      Scanner g = new Scanner(System.in);
-      System.out.println("Enter p2 value: ");
-      int p2 = g.nextInt();
-
-      Scanner h = new Scanner(System.in);
-      System.out.println("Enter q2 value: ");
-      int q2 = h.nextInt();
-
-		double lenLine1 = Math.sqrt(Math.pow((x2 - x1),2) + Math.pow((y2 - y1),2));
-		System.out.println("Length of line 1: " + lenLine1);
-
-		double lenLine2 = Math.sqrt(Math.pow((p2 - p1),2) + Math.pow((q2 - q1),2));
-      System.out.println("Length of line 2: " + lenLine2); 		
-
-		Double First, Second;
+		double lineLen2 = LenCal(p1, q1, p2, q2);
 	
-		First = new Double (lenLine1);
-		Second = new Double (lenLine2);
+		// printing line lengths
+		System.out.println("Length of line1: " + lineLen1);
+		System.out.println("Length of line2: " + lineLen2);
+
+		// comparing both lines
+		Double First, Second;
+			
+		First = new Double (lineLen1);
+		Second = new Double (lineLen2);
 		int result = First.compareTo(Second);
 
 		if(result > 0) {
-         System.out.println("Line1 is greater than Line2");
-      } else if(result < 0) {
-         System.out.println("Line1 is less than Line2");
+       	System.out.println("Line1 is greater than Line2");
+      }else if(result < 0) {
+       	System.out.println("Line1 is less than Line2");
       } else {
-         System.out.println("Line1 is equal to Line2");
+        System.out.println("Line1 is equal to Line2");
       }	
 		
 	}
